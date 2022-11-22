@@ -1,0 +1,61 @@
+<div class="card-container" [attr.data-cy]="movie.Title">
+    <div class="icons">
+        <div>
+            <img 
+                class="eye" 
+                *ngIf="movie.Watched" 
+                src="../../assets/eye.svg" 
+                alt="add to watchlist icon" 
+                attr.aria-label="add to watchlist icon"
+                width="24" 
+                height="24"
+                [attr.disabled]="canChange"
+                (click)="changeWatch()">
+            <img 
+                class="eye" 
+                *ngIf="!movie.Watched" 
+                src="../../assets/not-watched.svg" 
+                alt="remove from watchlist icon" 
+                attr.aria-label="remove from watchlist icon" 
+                width="24" 
+                height="24"
+                [attr.disabled]="canChange"
+                (click)="changeWatch()">
+        </div>
+        <div>
+            <img 
+                class="heart" 
+                *ngIf="movie.Saved" 
+                src="../../assets/heart.svg" 
+                alt="click heart icon to add as saved" 
+                attr.aria-label="click heart icon to add as saved" 
+                width="24" 
+                height="24"
+                [attr.disabled]="canChange"
+                (click)="changeSaved()">
+            <img 
+                class="heart" 
+                *ngIf="!movie.Saved" 
+                src="../../assets/heart-empty.svg" 
+                alt="click empty heart icon to remove from saved" 
+                attr.aria-label="click empty heart icon to remove from saved" 
+                width="24" 
+                height="24"
+                [attr.disabled]="canChange"
+                (click)="changeSaved()">
+        </div>
+    </div>
+    <div class="image-container">
+        <img [src]="movie.Poster" alt="{{movie.Title}} poster" attr.aria-label="{{movie.Title}} poster" width="150" height="221">
+    </div>
+    <div class="rating">
+        <span attr.aria-label="rating of {{movie.finalRating}}">({{movie.finalRating}})</span>
+    </div>
+    <div class="star-container">
+        <ng-container *ngFor="let star of movie.stars; let i = index;">
+            <img *ngIf="star===1" src="../../assets/star-full.svg" alt="full start icon" attr.aria-label="full start icon" width="24" height="24" class="star" [class.pr-0]="i===4">
+            <img *ngIf="star===0.5" src="../../assets/star-half.svg" alt="half star icon" attr.aria-label="half star icon" width="24" height="24" class="star" [class.pr-0]="i===4">
+            <img *ngIf="star===0" src="../../assets/star-empty.svg" alt="empty star icon" attr.aria-label="empty star icon" width="24" height="24" class="star" [class.pr-0]="i===4">
+        </ng-container>
+    </div>
+</div>

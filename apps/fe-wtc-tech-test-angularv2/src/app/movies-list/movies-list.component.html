@@ -1,0 +1,11 @@
+<div class="mt-20">
+    <div class="number-movies">
+        <strong data-cy="movies">Movies</strong>
+        <strong class="small-text" [attr.aria-label]="movies.length">&nbsp;({{movies.length}})</strong>
+    </div>
+    <div class="grid mt-20 pb-20">
+        <div *ngFor="let movie of movies" class="card-container" [style.backgroundColor]="movie.background">
+            <mono-nx-test-with-nextjs-movie-card [movie]="movie"></mono-nx-test-with-nextjs-movie-card>
+        </div>
+    </div>
+</div>

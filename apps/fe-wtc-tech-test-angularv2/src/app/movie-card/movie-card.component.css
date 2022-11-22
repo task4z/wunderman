@@ -1,0 +1,50 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.image-container{ 
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    border-radius: 10px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+}
+
+.star-container{
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.star{
+    padding-right: 5px;
+}
+
+.pr-0{
+    padding-right: 0px;
+}
+
+.icons{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eye{
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.heart{
+    margin-right: 6px;
+    cursor: pointer;
+}
